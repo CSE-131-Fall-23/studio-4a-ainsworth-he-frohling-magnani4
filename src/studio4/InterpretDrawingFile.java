@@ -26,20 +26,33 @@ public class InterpretDrawingFile {
 		boolean isFilled = in.nextBoolean();
 		double x = in.nextDouble();
 		double y = in.nextDouble();
-		double hw = in.nextDouble();
-		double hh = in.nextDouble();
 		
 		StdDraw.setPenColor(red, green, blue);
 		
-		if(isFilled)
-		{
-		StdDraw.filledRectangle(x, y, hw, hh);
+		if(type.equals("rectangle")) {
+			double hw = in.nextDouble();
+			double hh = in.nextDouble();
+			if(isFilled)
+			{
+			StdDraw.filledRectangle(x, y, hw, hh);
+			}
+			else
+			{
+			StdDraw.rectangle(x, y, hw, hh);
+			}
 		}
-		else
-		{
-		StdDraw.rectangle(x, y, hw, hh);
+		if(type.equals("ellipse")) {
+			double sMa = in.nextDouble();
+			double sma = in.nextDouble();
+			if(isFilled)
+			{
+			StdDraw.filledEllipse(x, y, sMa, sma);
+			}
+			else
+			{
+			StdDraw.ellipse(x, y, sMa, sma);
+			}
 		}
-		
 		
 	}
 }
