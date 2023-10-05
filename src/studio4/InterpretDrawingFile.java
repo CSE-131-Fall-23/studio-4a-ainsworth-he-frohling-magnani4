@@ -53,6 +53,19 @@ public class InterpretDrawingFile {
 			StdDraw.ellipse(x, y, sMa, sma);
 			}
 		}
-		
+		if(type.equals("triangle")) {
+			double x2 = in.nextDouble();
+			double y2 = in.nextDouble();
+			double x3 = in.nextDouble();
+			double y3 = in.nextDouble();
+			double[] xs = {x, x2, x3};
+			double[] ys = {y, y2, y3};
+			if (isFilled) {
+				StdDraw.filledPolygon(xs, ys);
+			}
+			else {
+				StdDraw.polygon(xs, ys);
+			}
+		}
 	}
 }
